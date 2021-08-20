@@ -3,7 +3,8 @@ set -Eeuo pipefail # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_
 
 DATADIR=$(realpath "$1")
 CONTAINER_NAME="postgres-${DATADIR//[^a-zA-Z0-9_.-]/_}"
-IMAGE='postgres:latest'
+#IMAGE='postgres:latest'
+IMAGE='postgres:12-alpine"
 COMMAND=''
 if [ -n "${2-}" ]; then
     COMMAND="-c \"$2\""
