@@ -39,6 +39,7 @@ POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_wal_size=2GB'"
 POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_worker_processes=8'"
 POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_parallel_workers_per_gather=8'"
 POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_parallel_workers=8'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'fsync=1'"
 
 mkdir -p "$DATADIR"
 docker run --rm \
