@@ -23,8 +23,22 @@ else
     INTERACTIVE="-i"
 fi
 
-POSTGRES_OPTS="-c 'max_connections=200' -c 'shared_buffers=4GB' -c 'effective_cache_size=12GB' -c 'maintenance_work_mem=1GB' -c 'checkpoint_completion_target=0.7' -c 'wal_buffers=16MB' -c 'default_statistics_target=100' -c 'random_page_cost=1.1' -c 'effective_io_concurrency=200' -c 'work_mem=1GB' -c 'min_wal_size=1GB' -c 'max_wal_size=2GB' -c 'max_worker_processes=8' -c 'max_parallel_workers_per_gather=8' -c 'max_parallel_workers=8'"
-
+POSTGRES_OPTS=""
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_connections=200'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'shared_buffers=4GB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'effective_cache_size=12GB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'maintenance_work_mem=1GB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'checkpoint_completion_target=0.7'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'wal_buffers=16MB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'default_statistics_target=100'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'random_page_cost=1.1'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'effective_io_concurrency=200'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'work_mem=1GB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'min_wal_size=1GB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_wal_size=2GB'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_worker_processes=8'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_parallel_workers_per_gather=8'"
+POSTGRES_OPTS="${POSTGRES_OPTS} -c 'max_parallel_workers=8'"
 
 mkdir -p "$DATADIR"
 docker run --rm \
