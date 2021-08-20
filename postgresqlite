@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail # https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/#:~:text=set%20%2Du,is%20often%20highly%20desirable%20behavior.
 
+# enable the line below for debugging information
+# set -xv
+
+# on macOS 11.5+, pls run "brew install coretools" to install realpath
 DATADIR=$(realpath "$1")
 CONTAINER_NAME="postgres-${DATADIR//[^a-zA-Z0-9_.-]/_}"
 #IMAGE='postgres:latest'
